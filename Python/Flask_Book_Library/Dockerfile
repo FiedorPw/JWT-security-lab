@@ -15,6 +15,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
+WORKDIR /app/tests
+RUN python -m unittest discover -s tests
+
 # Expose the port the app runs on
 EXPOSE 5000
 
